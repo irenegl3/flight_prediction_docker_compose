@@ -1,0 +1,27 @@
+version: "3"
+services:
+  zookeeper:
+    container_name: zookeeper
+    image: 
+    ports: 
+      - "2181:2181"
+    network_mode: host
+  kafka:
+    container_name: kafka
+    image: 
+    ports:
+      - "9092:9092"
+    network_mode: host
+  mongo:
+    container_name: mongo
+    image: mongo
+    ports:
+      - "27017:27017"
+  spark:
+    container_name: spark
+    image: 
+  webserver:
+    container_name: webserver
+    image:
+    ports:
+      - "5000:5000"
