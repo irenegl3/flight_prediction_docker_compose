@@ -14,7 +14,7 @@ services:
     network_mode: host
   mongo:
     container_name: mongo
-    image: gcr.io/bigdata-v2/mongo:v4
+    image: gcr.io/bigdata-v2/mongo:4
     ports:
       - "27017:27017"
     network_mode: host

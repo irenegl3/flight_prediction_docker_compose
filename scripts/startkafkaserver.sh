@@ -1,6 +1,8 @@
 #!/bin/bash
 
 #python3 ../scripts/update-kafka.py
+sleep 10
+
 ./bin/kafka-server-start.sh config/server.properties &
 
 sleep 15
