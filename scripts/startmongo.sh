@@ -1,4 +1,4 @@
 #!/bin/bash
 
-mongod
+mongod &
 ./resources/import_distances.sh
