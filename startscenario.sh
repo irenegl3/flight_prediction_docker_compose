@@ -8,7 +8,7 @@ sudo apt install -y xterm
 
 cd $s
 
-xterm -e "docker-compose up;bash" &
+xterm -e "docker-compose up -d;bash" &
 
 sleep 200
 
