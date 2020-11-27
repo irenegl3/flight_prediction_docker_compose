@@ -14,14 +14,17 @@ services:
     network_mode: host
   mongo:
     container_name: mongo
-    image: gcr.io/bigdata-v2/mongo:v1
+    image: gcr.io/bigdata-v2/mongo:v4
     ports:
       - "27017:27017"
+    network_mode: host
   spark:
     container_name: spark
     image: gcr.io/bigdata-v2/spark:v1
+    network_mode: host
   webserver:
     container_name: webserver
     image: gcr.io/bigdata-v2/webserver:v1
     ports:
       - "5000:5000"
+    network_mode: host

@@ -1,9 +1,8 @@
-FROM mongo
+FROM mongo:4.4.1
 WORKDIR /main
 
 RUN apt-get update && \
-	apt-get upgrade -y && \
-	apt install -y nano curl
+	apt install -y nano
 
 
 # User and password as arguments to build, so they are not
@@ -17,7 +16,7 @@ RUN apt-get install git -y && \
 	mv practica_big_data_2020-v2/* . && \
 	rm -r practica_big_data_2020-v2
 
-RUN chmod +x scripts/startmongo.sh
+# RUN chmod +x scripts/startmongo.sh
 
 WORKDIR /main
 #CMD ./scripts/startmongo.sh
