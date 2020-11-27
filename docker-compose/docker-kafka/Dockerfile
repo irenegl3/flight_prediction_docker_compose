@@ -1,4 +1,4 @@
-# Kafka and Zookeeper
+# Kafka
 
 FROM openjdk:8-jdk
 WORKDIR /main
