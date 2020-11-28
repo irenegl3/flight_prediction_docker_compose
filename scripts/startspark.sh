@@ -4,7 +4,7 @@
 rm -r models
 python3 resources/train_spark_mllib_model.py . &
 
-sleep 250
+sleep 300
 
 # ejecutar master y worker de spark para prediccion
 ./spark-2.4.4-bin-hadoop2.7/bin/spark-submit \
