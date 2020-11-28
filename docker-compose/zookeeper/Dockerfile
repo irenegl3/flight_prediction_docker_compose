@@ -31,5 +31,5 @@ RUN apt-get install git -y && \
 RUN chmod +x scripts/startzookeper.sh
 
 WORKDIR /main/kafka_2.12-2.3.0
-#CMD ./../scripts/startzookeper.sh
-CMD ["sleep", "12345"]
+CMD ./../scripts/startzookeper.sh
+#CMD ["sleep", "12345"]

@@ -26,6 +26,14 @@ RUN apt-get install git -y && \
 	git clone https://$USERNAME:$PASSWORD@github.com/irenegl3/practica_big_data_2020-v2 && \
 	mv practica_big_data_2020-v2/* . && \
 	rm -r practica_big_data_2020-v2
-#RUN pip3 install -r requirements.txt
 
-CMD ["sleep", "123456"]
+
+# cargar models
+RUN pip3 install -r requirements.txt
+
+
+RUN chmod +x scripts/startspark.sh
+
+# WORKDIR /main
+CMD ./scripts/startspark.sh
+#CMD ["sleep", "123456"]

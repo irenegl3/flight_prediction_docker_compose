@@ -19,5 +19,5 @@ RUN apt-get install git -y && \
 # RUN chmod +x scripts/startmongo.sh
 
 WORKDIR /main
-#CMD ./scripts/startmongo.sh
-CMD ["sleep", "123456"]
+CMD ./scripts/startmongo.sh
+#CMD ["sleep", "123456"]

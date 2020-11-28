@@ -31,5 +31,5 @@ RUN apt-get install git -y && \
 RUN chmod +x scripts/startkafkaserver.sh
 
 WORKDIR /main/kafka_2.12-2.3.0
-#CMD ./../scripts/startkafkaserver.sh
-CMD ["sleep", "123456"]
+CMD ./../scripts/startkafkaserver.sh
+#CMD ["sleep", "123456"]

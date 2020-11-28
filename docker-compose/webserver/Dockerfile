@@ -18,4 +18,5 @@ RUN apt-get install git -y && \
 RUN pip3 install -r requirements.txt
 
 WORKDIR /main/resources/web
-CMD ["sleep", "123456"]
+CMD ./scripts/startwebserver.sh
+#CMD ["sleep", "123456"]
