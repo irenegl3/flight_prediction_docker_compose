@@ -56,6 +56,6 @@ Ejecutar ```rm ~/.docker/config.json``` y de nuevo hacer el ```docker-compose up
 https://5000-69f7359d-4a33-4e15-85eb-01bd6e35b4d1.europe-west1.cloudshell.dev/flights/delays/predict_kafka
 
 ## Autores
-Ignacio Arregui
-Belén Balmori
-Irene García 
+- Ignacio Arregui
+- Belén Balmori
+- Irene García 
