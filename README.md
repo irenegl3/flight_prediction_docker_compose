@@ -55,6 +55,14 @@ Ejecutar ```rm ~/.docker/config.json``` y de nuevo hacer el ```docker-compose up
 7. El webserver mostrará la url donde se puede acceder al servicio de predicción (```docker logs webserver``` para verlo). Al pinchar en el enlace, añadir /flights/delays/predict_kafka al final de la url, obteniendo la siguiente dirección:
 https://5000-69f7359d-4a33-4e15-85eb-01bd6e35b4d1.europe-west1.cloudshell.dev/flights/delays/predict_kafka
 
+## Problemas
+Primeramente, se planteó el despliegue utilizando kubernetes en lugar de docker-compose. Creamos los distintos servicios en distintos pods mediante el *deployment*, pero al ejecutar el job de Spark, aparecía un error al conectarse con Kafka:
+```shell
+Error connecting to node kafka-bcd9f84cd-6q6xv:9092 (id: 2147483647 rack: null)
+java.io.IOException: Can't resolve address: kafka-bcd9f84cd-6q6xv:9092
+```
+La dirección indicada en MakePrediction.scala era la del servicio de kafka, y el puerto 9092. Tras varios intentos, no se consiguió solucionar el error y se pasó a realizar el despliegue con docker-compose.
+
 ## Autores
 - Ignacio Arregui
 - Belén Balmori
