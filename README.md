@@ -48,8 +48,10 @@ En este proyecto se han realizado las siguientes implementaciones a parte del fu
  docker.errors.DockerException: Credentials store error: StoreError('Credentials store docker-credential-gcloud exited with "".',)
 [699] Failed to execute script docker-compose
 ```
-ejecutar ```rm ~/.docker/config.json``` y de nuevo hacer el ```docker-compose up```
+Ejecutar ```rm ~/.docker/config.json``` y de nuevo hacer el ```docker-compose up```.
+
 6. Esperar unos 8-10 minutos hasta que los logs de spark muestren que ya se ha entrenado el modelo y está esperando a los consumers
+
 7. El webserver mostrará la url donde se puede acceder al servicio de predicción (```docker logs webserver``` para verlo). Al pinchar en el enlace, añadir /flights/delays/predict_kafka al final de la url, obteniendo la siguiente dirección:
 https://5000-69f7359d-4a33-4e15-85eb-01bd6e35b4d1.europe-west1.cloudshell.dev/flights/delays/predict_kafka
 
