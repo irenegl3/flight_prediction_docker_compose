@@ -39,3 +39,21 @@ En este proyecto se han realizado las siguientes implementaciones a parte del fu
 - Despliegue de todo el sistema en la plataforma Google Cloud (1 punto)
 
 ## Instrucciones de despliegue
+1. Crear un proyecto en Google Cloud
+2. Meterse en el terminal
+3. Crear el fichero docker-compose.yml (copiando el del repositorio)
+4. Ejecutar comando ```docker-compose up``` (-d si se no se quiere ver los logs)
+5. Si no funciona el paso anterior y se muestra este error:
+ ```shell
+ docker.errors.DockerException: Credentials store error: StoreError('Credentials store docker-credential-gcloud exited with "".',)
+[699] Failed to execute script docker-compose
+```
+ejecutar ```rm ~/.docker/config.json``` y de nuevo hacer el ```docker-compose up```
+6. Esperar unos 8-10 minutos hasta que los logs de spark muestren que ya se ha entrenado el modelo y está esperando a los consumers
+7. El webserver mostrará la url donde se puede acceder al servicio de predicción (```docker logs webserver``` para verlo). Al pinchar en el enlace, añadir /flights/delays/predict_kafka al final de la url, obteniendo la siguiente dirección:
+https://5000-69f7359d-4a33-4e15-85eb-01bd6e35b4d1.europe-west1.cloudshell.dev/flights/delays/predict_kafka
+
+## Autores
+Ignacio Arregui
+Belén Balmori
+Irene García 

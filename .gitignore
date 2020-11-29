@@ -30,8 +30,4 @@ ghostdriver.log
 cassandra
 janusgraph
 deep
-before_compose.sh
-createcompose.py
-startscenario.sh
 startmongo.sh
-dockerimages
