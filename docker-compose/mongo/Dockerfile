@@ -1,4 +1,4 @@
-FROM mongo:4.4.1
+FROM mongo
 WORKDIR /main
 
 RUN apt-get update && \
