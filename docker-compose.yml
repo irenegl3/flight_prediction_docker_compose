@@ -1,0 +1,41 @@
+version: "3"
+services:
+  zookeeper:
+    container_name: zookeeper
+    image: gcr.io/bigdata-v2/zookeeper:v2
+    ports: 
+      - "2181:2181"
+    network_mode: host
+  kafka:
+    container_name: kafka
+    image: gcr.io/bigdata-v2/kafka:v5
+    ports:
+      - "9092:9092"
+    network_mode: host
+    depends_on:
+      - zookeeper
+  mongo:
+    container_name: mongo
+    image: gcr.io/bigdata-v2/mongo:5
+    ports:
+      - "27017:27017"
+    network_mode: host
+  spark:
+    container_name: spark
+    image: gcr.io/bigdata-v2/spark:v5
+    network_mode: host
+    environment: 
+      - SPARK_HOME=/main/spark-2.4.4-bin-hadoop2.7
+    depends_on:
+      - kafka
+      - mongo
+  webserver:
+    container_name: webserver
+    image: gcr.io/bigdata-v2/webserver:v5
+    ports:
+      - "5000:5000"
+    network_mode: host
+    environment: 
+      - PROJECT_HOME=/main
+    depends_on:
+      - spark
