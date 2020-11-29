@@ -16,7 +16,7 @@ RUN apt-get install git -y && \
 	mv practica_big_data_2020-v2/* . && \
 	rm -r practica_big_data_2020-v2
 
-# RUN chmod +x scripts/startmongo.sh
+RUN chmod +x scripts/mongo.sh
 
 WORKDIR /main
 CMD ./scripts/mongo.sh

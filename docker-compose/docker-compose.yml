@@ -12,6 +12,8 @@ services:
     ports:
       - "9092:9092"
     network_mode: host
+    depends_on: 
+      - zookeeper
   mongo:
     container_name: mongo
     image: gcr.io/bigdata-v2/mongo:4
@@ -20,11 +22,20 @@ services:
     network_mode: host
   spark:
     container_name: spark
-    image: gcr.io/bigdata-v2/spark:v3
+    image: gcr.io/bigdata-v2/spark:v4
     network_mode: host
+    environment: 
+      - SPARK_HOME=/main/spark-2.4.4-bin-hadoop2.7
+    depends_on: 
+      - kafka
+      - mongo
   webserver:
     container_name: webserver
-    image: gcr.io/bigdata-v2/webserver:v3
+    image: gcr.io/bigdata-v2/webserver:v4
     ports:
       - "5000:5000"
     network_mode: host
+    environment: 
+      - PROJECT_HOME=/main
+    depends_on: 
+      - spark

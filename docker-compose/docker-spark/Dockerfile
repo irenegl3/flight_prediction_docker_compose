@@ -34,6 +34,6 @@ RUN pip3 install -r requirements.txt
 
 RUN chmod +x scripts/startspark.sh
 
-# WORKDIR /main
+WORKDIR /main
 CMD ./scripts/startspark.sh
 #CMD ["sleep", "123456"]

@@ -30,5 +30,4 @@ ghostdriver.log
 cassandra
 janusgraph
 deep
-
-docker-compose 
+docker-compose

@@ -17,6 +17,8 @@ RUN apt-get install git -y && \
 	rm -r practica_big_data_2020-v2
 RUN pip3 install -r requirements.txt
 
+RUN chmod +x scripts/startwebserver.sh
+
 WORKDIR /main/resources/web
-CMD ./scripts/startwebserver.sh
+CMD ./../../scripts/startwebserver.sh
 #CMD ["sleep", "123456"]
